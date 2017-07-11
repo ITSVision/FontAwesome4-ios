@@ -11,32 +11,6 @@
 		$resultArray[$matches[2][$k]] = $v;
 	}
 	
-	print_r($resultArray);
-	die();
-	
-	
-	
-	
-	$cheatsheet = file_get_contents("http://fontawesome.io/cheatsheet/");
-	$cheatsheet = trim($cheatsheet);
-	$cheatsheet = str_replace(array("\t","\n"), "", $cheatsheet);
-	
-	
-	
-	
-	preg_match_all("/<i class=\"fa fa-fw\" aria-hidden=\"true\" title=\"(.*?)\">(.*?)<\/i>(.*?)\<span class/", $cheatsheet,$results);
-	
-	$resultArray = array();
-	
-	foreach ($results[2] as $k => $v) {
-		$resultArray[str_replace(";","",trim(str_replace("&#x","\u",$v)))] = trim($results[3][$k]);
-	}
-	
-	ksort($resultArray);
-	
-	print_r($resultArray);
-	die();
-	
 	//type:  fontAwesomeUnicodeStrings = @[@"\uf000",.....];
 	$unicodeStrings = "fontAwesomeUnicodeStrings = @[%s];";
 	$tmp = array();
