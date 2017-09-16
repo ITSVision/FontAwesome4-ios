@@ -706,7 +706,9 @@ typedef NS_ENUM(NSInteger, FAIcon) {
 	FAIconSnowflakeO,
 	FAIconSuperpowers,
 	FAIconWpexplorer,
-	FAIconMeetup
+	FAIconMeetup,
+    FAIconCog,
+    FAIconBitcoin
 	//php-generator-enum-end
 
 };
