@@ -6,11 +6,9 @@
 	
 	preg_match_all('/\$fa-var-(.*)\: \"(.*)\"\;/', $variables, $matches);
 
-	$resultArray = array();
-	foreach ($matches[1] as $k=>$v) {
-		$resultArray[$matches[2][$k]] = $v;
-	}
+	$resultArray = array_combine($matches[1],$matches[2]);
 	
+
 	//type:  fontAwesomeUnicodeStrings = @[@"\uf000",.....];
 	$unicodeStrings = "fontAwesomeUnicodeStrings = @[%s];";
 	$tmp = array();
@@ -36,6 +34,9 @@
 		$dictionaryStringFull .= sprintf($dictionaryString,$v,$fatype);				
 		$enumType[] = "\t".$fatype;
 	}
+	
+	
+	
 
 
 

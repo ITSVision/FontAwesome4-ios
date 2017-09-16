@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FontAwesome4-ios'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'Extended and updated FontAwesome 4.7 support for iOS'
  
   s.description      = <<-DESC
