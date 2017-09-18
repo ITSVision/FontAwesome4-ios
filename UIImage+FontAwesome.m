@@ -47,11 +47,21 @@
     
     
     //// Text Drawing
+    
+    NSMutableParagraphStyle *p = [[NSMutableParagraphStyle alloc]init] ;
+    [p setAlignment:NSTextAlignmentCenter];
+    [p setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    
     float fontSize=(MIN(size.height,size.width))*scale;
     CGRect textRect = CGRectMake(size.width/2-(fontSize/2)*1.2, size.height/2-fontSize/2, fontSize*1.2, fontSize);
+    [textContent drawInRect: textRect
+             withAttributes: @{NSFontAttributeName: [UIFont fontWithName:@"FontAwesome" size:(float)((int)fontSize)],
+                               NSParagraphStyleAttributeName: p,
+                               NSForegroundColorAttributeName: iconColor,
+                               NSBackgroundColorAttributeName: bgColor
+                               }];
     [iconColor setFill];
-    [textContent drawInRect: textRect withFont: [UIFont fontWithName:@"FontAwesome" size:(float)((int)fontSize)] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
-    
     
     //Image returns
     UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
